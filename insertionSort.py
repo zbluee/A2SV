@@ -1,4 +1,3 @@
-#Question-> https://www.hackerrank.com/challenges/insertionsort1/problem
 #!/bin/python3
 
 import math
@@ -20,7 +19,7 @@ def insertionSort1(n, arr):
     last_value = arr[-1]
     for i in range(n -1, -1, -1):
         
-        if last_value <= arr[i-1] and i != 0:
+        if last_value <= arr[i-1] and i > 0:
             arr[i] = arr[i- 1]
             print(*arr, sep=" ")
             
@@ -28,6 +27,7 @@ def insertionSort1(n, arr):
             arr[i] = last_value
             print(*arr, sep=" ")
             break
+    return ' '.join([str(i) for i in arr])
 if __name__ == '__main__':
     n = int(input().strip())
 
