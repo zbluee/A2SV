@@ -1,4 +1,4 @@
-#Question =>
+#Question => https://leetcode.com/problems/design-circular-deque/
 class MyCircularDeque:
 
     def __init__(self, k: int):
@@ -14,8 +14,8 @@ class MyCircularDeque:
         if  self.isFull():
             return False
             
-        self.deque[ (self.front - 1) % self.capacity] = value
         self.front = (self.front - 1)% self.capacity
+        self.deque[ self.front ] = value
         return True
 
    
