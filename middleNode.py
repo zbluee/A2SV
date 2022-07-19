@@ -9,10 +9,10 @@ class Solution:
         len = 0
         itr = head
         while itr.next:
-            
-            itr = itr.next
             len += 1
-        len += 1
+            itr = itr.next
+            
+        
         mid = len//2
         
         count = 0
