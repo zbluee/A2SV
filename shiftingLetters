@@ -1,0 +1,12 @@
+#Question -> https://leetcode.com/problems/shifting-letters/
+class Solution:
+    def shiftingLetters(self, s: str, shifts: List[int]) -> str:
+        shift, res = [0] * len(s), [0] * len(s)
+        curr = 0
+        for i, sh_value in reversed(list(enumerate(shifts))):
+            curr += sh_value
+            shift[i] = curr
+        for i, sh_value in enumerate(shift):
+            res[i] = chr((ord(s[i]) - ord('a') + sh_value) % 26 + ord('a'))
+        return ''.join(res)
+        
